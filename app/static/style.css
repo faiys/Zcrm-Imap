@@ -1,0 +1,225 @@
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3a0ca3;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #4cc9f0;
+    --warning-color: #f72585;
+    --info-color: #7209b7;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fb;
+    /* padding: 20px; */
+    color: var(--dark-color);
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 25px 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header h1 {
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.header p {
+    opacity: 0.9;
+    margin: 5px 0 0 0;
+}
+
+.tab-container {
+    padding: 0;
+}
+
+.nav-tabs {
+    background-color: #f8f9fa;
+    padding: 0 20px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    color: #6c757d;
+    font-weight: 500;
+    padding: 15px 20px;
+    white-space: nowrap;
+    border-radius: 0;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--primary-color);
+    background-color: rgba(67, 97, 238, 0.05);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    background-color: white;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.nav-tabs .nav-link i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.tab-badge {
+    display: inline-block;
+    background-color: var(--warning-color);
+    color: white;
+    font-size: 0.7rem;
+    border-radius: 10px;
+    padding: 2px 8px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.tab-content {
+    padding: 30px;
+    min-height: 400px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.tab-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.list-item:hover {
+    background-color: #f8f9fa;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.item-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.inbox-icon { background-color: var(--primary-color); }
+.notification-icon { background-color: var(--warning-color); }
+.call-icon { background-color: var(--success-color); }
+.meeting-icon { background-color: var(--info-color); }
+.history-icon { background-color: #6c757d; }
+
+.item-content {
+    flex-grow: 1;
+}
+
+.item-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.item-subtitle {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.item-time {
+    color: #adb5bd;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6c757d;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.empty-state h4 {
+    margin-bottom: 10px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+    background-color: #f8f9fa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-tabs {
+        padding: 0;
+    }
+    
+    .nav-tabs .nav-link {
+        padding: 15px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .nav-tabs .nav-link i {
+        margin-right: 5px;
+        font-size: 1rem;
+    }
+    
+    .tab-content {
+        padding: 20px;
+    }
+    
+    body {
+        padding: 10px;
+    }
+}
