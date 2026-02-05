@@ -855,3 +855,22 @@ body {
     min-width: 90px;
     }
 }
+/* message tap */
+.app-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border: 1px solid #e9ecef;
+}
+.app-icon i {
+    font-size: 36px;
+}
+.app-info {
+    max-width: 500px;
+    margin: 0 auto;
+}

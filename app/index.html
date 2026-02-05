@@ -23,7 +23,7 @@
             </div>
             <div class="nav-tab" data-tab="emails">
                 Emails
-                <span class="nav-count" id="inbox-badge"></span>
+                <span class="nav-count" id="inbox-badge">0</span>
             </div>
             <div class="nav-tab" data-tab="calls">
                 Calls
@@ -31,7 +31,7 @@
             </div>
             <div class="nav-tab" data-tab="messages">
                 Messages
-                <span class="nav-count">0</span>
+                <span class="nav-count" id="message-count-id">0</span>
             </div>
             <div class="nav-tab" data-tab="tasks">
                 Tasks
@@ -109,47 +109,44 @@
     </div>
     
     <!-- Messages Tab Content -->
-    <div class="tab-content" id="messages-tab">
-        <div class="empty-state">
-            <i class="bi bi-chat-dots"></i>
-            <h3>Messages</h3>
-            <p>You have 12 unread messages</p>
-        </div>
-        
-        <div class="email-list">
-            <div class="message-item">
-                <div class="message-avatar">JS</div>
-                <div class="message-content">
-                    <div class="message-header">
-                        <div class="message-sender">John Smith</div>
-                        <div class="message-time">10:30 AM</div>
-                    </div>
-                    <div class="message-text">Hi, do you have the latest catalog for knee braces?</div>
+    <div class="tab-content" id="messages-tab">  
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="whatsapp-tab" data-bs-toggle="tab" data-bs-target="#whatsapp" type="button" role="tab" aria-controls="whatsapp" aria-selected="true">
+                    <i class="bi bi-whatsapp"></i> WhatsApp
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="facebook-tab" data-bs-toggle="tab" data-bs-target="#facebook" type="button" role="tab" aria-controls="facebook" aria-selected="false">
+                    <i class="bi bi-facebook"></i> Facebook
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="instagram-tab" data-bs-toggle="tab" data-bs-target="#instagram" type="button" role="tab" aria-controls="instagram" aria-selected="false">
+                    <i class="bi bi-instagram"></i> Instagram
+                </button>
+            </li>
+        </ul> 
+        <!-- <div class="tab-content" id="myTabContent"> -->
+            <!-- WhatsApp Tab -->
+            <div class="tab-pane fade show active" id="whatsapp" role="tabpanel" aria-labelledby="whatsapp-tab">
+                <div class="email-list" id="whatsapp-id">
                 </div>
             </div>
             
-            <div class="message-item">
-                <div class="message-avatar">MR</div>
-                <div class="message-content">
-                    <div class="message-header">
-                        <div class="message-sender">Maria Rodriguez</div>
-                        <div class="message-time">Yesterday</div>
-                    </div>
-                    <div class="message-text">Following up on our meeting about the new bracing solutions...</div>
+            <!-- Facebook Tab -->
+            <div class="tab-pane fade" id="facebook" role="tabpanel" aria-labelledby="facebook-tab">
+                <div class="email-list" id="facebook-id">
+                    working....
                 </div>
             </div>
             
-            <div class="message-item">
-                <div class="message-avatar">PT</div>
-                <div class="message-content">
-                    <div class="message-header">
-                        <div class="message-sender">Physical Therapy Dept</div>
-                        <div class="message-time">Dec 20</div>
-                    </div>
-                    <div class="message-text">We need to order 15 ankle braces for next month's patients</div>
+            <!-- Instagram Tab -->
+            <div class="tab-pane fade" id="instagram" role="tabpanel" aria-labelledby="instagram-tab">
+                <div class="email-list" id="insta-id">
                 </div>
             </div>
-        </div>
+        <!-- </div>   -->
     </div>
     
     <!-- Tasks Tab Content -->
@@ -291,9 +288,24 @@
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabTriggers = document.querySelectorAll('button[data-bs-toggle="tab"]');
+            
+            tabTriggers.forEach(tab => {
+                tab.addEventListener('shown.bs.tab', function(event) {
+                    const activeTab = event.target.getAttribute('data-bs-target').substring(1);
+                });
+            });
+        });
+    </script>
 
     <script src="https://static.zohocdn.com/zohocrm/v2.1/sdk/ZohoEmbededAppSDK.min.js"></script>
     <script src="https://live.zwidgets.com/js-sdk/1.5/ZohoEmbededAppSDK.min.js"></script>
+
+    
+    <script src="static/zoho.js"></script>
+    <script src="static/message.js"></script>
     <script src="static/email.js"></script>
     <script src="static/py.js"></script>
   </body>
