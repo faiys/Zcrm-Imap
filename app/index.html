@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="static/loading.css">
+    <link rel="stylesheet" href="static/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </head>
+  <body>
+     <!-- Top Navigation Bar -->
+    <div class="top-nav">
+        <div class="nav-title">Inbox</div>
+        <div class="nav-tabs">
+            <div class="nav-tab active" data-tab="primary">
+                Primary
+                <span class="nav-count">0</span>
+            </div>
+            <div class="nav-tab" data-tab="emails">
+                Emails
+                <span class="nav-count" id="inbox-badge"></span>
+            </div>
+            <div class="nav-tab" data-tab="calls">
+                Calls
+                <span class="nav-count">0</span>
+            </div>
+            <div class="nav-tab" data-tab="messages">
+                Messages
+                <span class="nav-count">0</span>
+            </div>
+            <div class="nav-tab" data-tab="tasks">
+                Tasks
+                <span class="nav-count">0</span>
+            </div>
+            <div class="nav-tab" data-tab="reminders">
+                Reminders
+                <span class="nav-count">0</span>
+            </div>
+            <div class="nav-tab" data-tab="contacts">
+                Potential Contacts
+                <span class="nav-count">0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Primary Tab Content -->
+    <div class="tab-content active" id="primary-tab">
+       
+    </div>
+    
+    <!-- Emails Tab Content -->
+    <div class="tab-content" id="emails-tab">        
+        <div class="email-list" id="email-container">
+        </div>
+    </div>
+    <!-- Email details module -->
+    <div id="email-modal" class="email-slide-panel">
+        <div id="email-modal-body"></div>
+    </div>
+    <div id="modal-backdrop" class="modal-backdrop"></div>
+
+    <!-- Calls Tab Content -->
+    <div class="tab-content" id="calls-tab">
+        <div class="empty-state">
+            <i class="bi bi-telephone"></i>
+            <h3>Recent Calls</h3>
+            <p>You have 9 recent calls</p>
+        </div>
+        
+        <div class="email-list">
+            <div class="call-item">
+                <div class="call-icon">
+                    <i class="bi bi-telephone-inbound" style="font-size: 20px;"></i>
+                </div>
+                <div class="call-content">
+                    <div class="call-person">Dr. Michael Chen</div>
+                    <div class="call-time">Today, 10:30 AM • 15 min</div>
+                </div>
+                <div class="call-type incoming">Incoming</div>
+            </div>
+            
+            <div class="call-item">
+                <div class="call-icon">
+                    <i class="bi bi-telephone-outbound" style="font-size: 20px;"></i>
+                </div>
+                <div class="call-content">
+                    <div class="call-person">Sarah Johnson (Physio Clinic)</div>
+                    <div class="call-time">Yesterday, 3:45 PM • 8 min</div>
+                </div>
+                <div class="call-type outgoing">Outgoing</div>
+            </div>
+            
+            <div class="call-item">
+                <div class="call-icon">
+                    <i class="bi bi-telephone-missed" style="font-size: 20px;"></i>
+                </div>
+                <div class="call-content">
+                    <div class="call-person">Insurance Provider</div>
+                    <div class="call-time">Dec 21, 11:15 AM • Missed</div>
+                </div>
+                <div class="call-type missed">Missed</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Messages Tab Content -->
+    <div class="tab-content" id="messages-tab">
+        <div class="empty-state">
+            <i class="bi bi-chat-dots"></i>
+            <h3>Messages</h3>
+            <p>You have 12 unread messages</p>
+        </div>
+        
+        <div class="email-list">
+            <div class="message-item">
+                <div class="message-avatar">JS</div>
+                <div class="message-content">
+                    <div class="message-header">
+                        <div class="message-sender">John Smith</div>
+                        <div class="message-time">10:30 AM</div>
+                    </div>
+                    <div class="message-text">Hi, do you have the latest catalog for knee braces?</div>
+                </div>
+            </div>
+            
+            <div class="message-item">
+                <div class="message-avatar">MR</div>
+                <div class="message-content">
+                    <div class="message-header">
+                        <div class="message-sender">Maria Rodriguez</div>
+                        <div class="message-time">Yesterday</div>
+                    </div>
+                    <div class="message-text">Following up on our meeting about the new bracing solutions...</div>
+                </div>
+            </div>
+            
+            <div class="message-item">
+                <div class="message-avatar">PT</div>
+                <div class="message-content">
+                    <div class="message-header">
+                        <div class="message-sender">Physical Therapy Dept</div>
+                        <div class="message-time">Dec 20</div>
+                    </div>
+                    <div class="message-text">We need to order 15 ankle braces for next month's patients</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tasks Tab Content -->
+    <div class="tab-content" id="tasks-tab">
+        <div class="empty-state">
+            <i class="bi bi-check-circle"></i>
+            <h3>Tasks</h3>
+            <p>You have 211 tasks in your list</p>
+        </div>
+        
+        <div class="email-list">
+            <div class="task-item">
+                <div class="task-checkbox">
+                    <input type="checkbox">
+                </div>
+                <div class="task-content">
+                    <div class="task-title">Follow up with Bhavikkumar Patel about order</div>
+                    <div class="task-due">Due: Today</div>
+                </div>
+                <div class="task-priority high">High</div>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-checkbox">
+                    <input type="checkbox">
+                </div>
+                <div class="task-content">
+                    <div class="task-title">Process insurance claims for December</div>
+                    <div class="task-due">Due: Dec 28</div>
+                </div>
+                <div class="task-priority high">High</div>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-checkbox">
+                    <input type="checkbox">
+                </div>
+                <div class="task-content">
+                    <div class="task-title">Update inventory for Skechers products</div>
+                    <div class="task-due">Due: Jan 5</div>
+                </div>
+                <div class="task-priority medium">Medium</div>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-checkbox">
+                    <input type="checkbox">
+                </div>
+                <div class="task-content">
+                    <div class="task-title">Schedule meeting with Millennium Bracing</div>
+                    <div class="task-due">Due: Jan 10</div>
+                </div>
+                <div class="task-priority low">Low</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Reminders Tab Content -->
+    <div class="tab-content" id="reminders-tab">
+        <div class="empty-state">
+            <i class="bi bi-bell"></i>
+            <h3>Reminders</h3>
+            <p>You have 10 active reminders</p>
+        </div>
+        
+        <div class="email-list">
+            <div class="reminder-item">
+                <div class="reminder-icon">
+                    <i class="bi bi-calendar-check" style="font-size: 20px;"></i>
+                </div>
+                <div class="reminder-content">
+                    <div class="reminder-title">Client appointment: Eleanor Senecida</div>
+                    <div class="reminder-time">Today, 2:00 PM</div>
+                </div>
+            </div>
+            
+            <div class="reminder-item">
+                <div class="reminder-icon">
+                    <i class="bi bi-clock-history" style="font-size: 20px;"></i>
+                </div>
+                <div class="reminder-content">
+                    <div class="reminder-title">Submit quarterly report</div>
+                    <div class="reminder-time">Due: Tomorrow</div>
+                </div>
+            </div>
+            
+            <div class="reminder-item">
+                <div class="reminder-icon">
+                    <i class="bi bi-currency-dollar" style="font-size: 20px;"></i>
+                </div>
+                <div class="reminder-content">
+                    <div class="reminder-title">Process payroll</div>
+                    <div class="reminder-time">Every Friday</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contacts Tab Content -->
+    <div class="tab-content" id="contacts-tab">
+        <div class="empty-state">
+            <i class="bi bi-people"></i>
+            <h3>Potential Contacts</h3>
+            <p>You have 4 potential contacts to follow up with</p>
+        </div>
+        
+        <div class="email-list">
+            <div class="contact-item">
+                <div class="contact-avatar">RC</div>
+                <div class="contact-content">
+                    <div class="contact-name">Robert Chen - Orthopedic Clinic</div>
+                    <div class="contact-company">Metro Health Center</div>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-avatar">SW</div>
+                <div class="contact-content">
+                    <div class="contact-name">Susan Williams - Procurement</div>
+                    <div class="contact-company">City Hospital Network</div>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-avatar">DL</div>
+                <div class="contact-content">
+                    <div class="contact-name">David Lee - Sports Medicine</div>
+                    <div class="contact-company">University Athletics</div>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-avatar">KP</div>
+                <div class="contact-content">
+                    <div class="contact-name">Karen Patel - Rehabilitation</div>
+                    <div class="contact-company">Regional Therapy Center</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://static.zohocdn.com/zohocrm/v2.1/sdk/ZohoEmbededAppSDK.min.js"></script>
+    <script src="https://live.zwidgets.com/js-sdk/1.5/ZohoEmbededAppSDK.min.js"></script>
+    <script src="static/email.js"></script>
+    <script src="static/py.js"></script>
+  </body>
+</html>

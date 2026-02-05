@@ -1,0 +1,40 @@
+ .loading-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;   /* full screen */
+}
+.dot-loader {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #6c757d;
+    position: relative;
+    animation: dotPulse 1.5s infinite linear;
+}
+
+.dot-loader::before,
+.dot-loader::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #6c757d;
+}
+
+.dot-loader::before {
+    left: -20px;
+    animation: dotPulse 1.5s infinite linear;
+}
+
+.dot-loader::after {
+    left: 20px;
+    animation: dotPulse 1.5s infinite linear;
+}
+
+@keyframes dotPulse {
+    0% { opacity: 0.2; }
+    20% { opacity: 1; }
+    100% { opacity: 0.2; }
+}

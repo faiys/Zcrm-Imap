@@ -1,3 +1,18 @@
 {
-  "service": "CRM"
+  "service": "CRM",
+  "type": "crm",
+  "widget": {
+    "location": "customTab",
+    "name": "EmailBox"
+  },
+  "connectors": [
+    {
+      "type": "webhook",
+      "url": ["http://127.0.0.1:8000","https://django-imap.onrender.com"]
+    }
+  ],
+  "whitelist": [
+    "http://127.0.0.1:8000",
+    "https://django-imap.onrender.com"
+  ]
 }
