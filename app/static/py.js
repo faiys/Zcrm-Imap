@@ -5,6 +5,9 @@ inbox_badge.innerHTML = 0
 ZOHO.embeddedApp.on("PageLoad", async function (data) {
     user_email = await getUser()
     inbox_emailResp = await fetchEmail()
+    await renderCalls("Calls")
+    await renderContact("Contacts", "contact")
+    
 });
 ZOHO.embeddedApp.init();
 
@@ -18,9 +21,9 @@ async function fetchEmail(page_no=1) {
                 "Content-Type": "application/json"
             }
         });
-
+        // console.log("data - ",response)
         const data = await response.json();
-        // console.log("data - ",data)
+        
         const main_data = data.emails.emails || [];
 
         email_container.innerHTML = "";

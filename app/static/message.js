@@ -6,13 +6,12 @@ const insta_id = document.getElementById("insta-id");
 async function renderContact(ReportName, type){
     let data = null
     if(type === "contact"){
-        data = await fetch(ReportName);
+        data = await fetchRecord(ReportName);
     }
-    console.log("data = ", data);
     let whatsCount = 0;
     let instaCount = 0;
     for (const cont_ele of data) {
-        console.log("Social - ",await fetchRelatedRecords("Contacts", cont_ele.id, "Social"))
+        // console.log("Social - ",await fetchRelatedRecords("Contacts", cont_ele.id, "Social"))
 
         // Whatsapp
         const whatsappresp = await fetchRelatedRecords("Contacts", cont_ele.id, "messages__s")

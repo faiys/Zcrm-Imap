@@ -1,10 +1,5 @@
-ZOHO.embeddedApp.on("PageLoad", async function (data) {
-    await renderContact("Contacts", "contact")
-});
-ZOHO.embeddedApp.init();
 
-
-async function fetch(modul){
+async function fetchRecord(modul){
     try{
        const resp = await ZOHO.CRM.API.getAllRecords({
             Entity: modul,
@@ -12,6 +7,7 @@ async function fetch(modul){
             per_page: 200,
             page: 1
         });
+        // console.log("resp = ",resp)
         return resp.data;
     }
     catch (e){

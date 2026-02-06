@@ -27,7 +27,7 @@
             </div>
             <div class="nav-tab" data-tab="calls">
                 Calls
-                <span class="nav-count">0</span>
+                <span class="nav-count" id="calls-badge">0</span>
             </div>
             <div class="nav-tab" data-tab="messages">
                 Messages
@@ -65,14 +65,8 @@
     <div id="modal-backdrop" class="modal-backdrop"></div>
 
     <!-- Calls Tab Content -->
-    <div class="tab-content" id="calls-tab">
-        <div class="empty-state">
-            <i class="bi bi-telephone"></i>
-            <h3>Recent Calls</h3>
-            <p>You have 9 recent calls</p>
-        </div>
-        
-        <div class="email-list">
+    <div class="tab-content" id="calls-tab">        
+        <div class="email-list" id="calls-id">
             <div class="call-item">
                 <div class="call-icon">
                     <i class="bi bi-telephone-inbound" style="font-size: 20px;"></i>
@@ -304,6 +298,7 @@
     <script src="https://live.zwidgets.com/js-sdk/1.5/ZohoEmbededAppSDK.min.js"></script>
 
     
+    <script src="static/calls.js"></script>
     <script src="static/zoho.js"></script>
     <script src="static/message.js"></script>
     <script src="static/email.js"></script>
